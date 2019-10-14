@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="002GhostButton.css" type="text/css">
+</head>
+
+
+
+<body>
+
+    <div class="box">
+        <div class="link link-miss">
+            <span class="icon"></span>
+            <a href="#" class="button" data-text="My mission is here">
+                <span class="line line-top"></span>
+                <span class="line line-left"></span>
+                <span class="line line-right"></span>
+                <span class="line line-bottom"></span>
+                MISSION
+            </a>
+        </div>
+
+        <div class="link link-play">
+            <span class="icon"></span>
+            <a href="#" class="button" data-text="My miadfafaf ">
+                <span class="line line-top"></span>
+                <span class="line line-left"></span>
+                <span class="line line-right"></span>
+                <span class="line line-bottom"></span>
+                PLAY
+            </a>
+        </div>
+
+        <div class="link link-touch">
+            <span class="icon"></span>
+            <a href="#" class="button" data-text="My work is ehere">
+                <span class="line line-top"></span>
+                <span class="line line-left"></span>
+                <span class="line line-right"></span>
+                <span class="line line-bottom"></span>
+                TOUCH
+            </a>
+        </div>
+
+        <div class="tooltip">
+            <em></em>
+            <span></span>
+        </div>
+
+
+    </div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+    $(function () {
+        $(".button").hover(function () {
+            let titeleText = $(this).attr('data-text');
+            $(".tooltip em").text(titeleText);
+
+            let letfLoc = $(this).offset().left;
+            let addLeft = ($('.tooltip').outerWidth() - $(this).outerWidth())/2;
+            $(".tooltip").css({
+                left: letfLoc -addLeft,
+                top: 140
+            }).animate({
+                top:195,
+                opacity:1,
+            }, 300)
+        }, function () {
+            $(".tooltip").animate({opacity:0},300)
+        })
+    })
+</script>
+</body>
+
+</html>
